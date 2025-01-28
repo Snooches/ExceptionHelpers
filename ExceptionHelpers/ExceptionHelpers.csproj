@@ -7,4 +7,10 @@
 		<GeneratePackageOnBuild>true</GeneratePackageOnBuild>
 	</PropertyGroup>
 
+	<PropertyGroup>
+    		<PackageId>NuGet.Workflow</PackageId>
+    		<RepositoryType>git</RepositoryType>
+    		<RepositoryUrl>https://github.com/Snooches/ExceptionHelpers</RepositoryUrl>
+  	</PropertyGroup>
+
 </Project>
