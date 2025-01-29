@@ -8,7 +8,7 @@
 	</PropertyGroup>
 
 	<PropertyGroup>
-    		<PackageId>NuGet.Workflow</PackageId>
+    		<PackageId>ExceptionHelpers</PackageId>
     		<RepositoryType>git</RepositoryType>
     		<RepositoryUrl>https://github.com/Snooches/ExceptionHelpers</RepositoryUrl>
   	</PropertyGroup>
