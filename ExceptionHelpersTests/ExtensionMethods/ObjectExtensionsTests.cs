@@ -1,8 +1,8 @@
-using ExceptionHelpers;
+using ExceptionHelpers.ExtensionMethods;
 
-namespace ExceptionHelpersTests;
+namespace ExceptionHelpersTests.ExtensionMethods;
 
-public class ExtensionsTests
+public class ObjectExtensionsTests
 {
 	#region ThrowIfNull
 
@@ -29,7 +29,7 @@ public class ExtensionsTests
 	public void ThrowIfNull_MethodWasCalledWithCustomMessage_ArgumentNullExceptionWasThrownWithProvidedMessage()
 	{
 		object? obj = null;
-		string message = "This is my custom exception message.";
+		const string message = "This is my custom exception message.";
 
 		Assert.That(() => obj.ThrowIfNull(message: message), Throws.ArgumentNullException
 			.With.Message.EqualTo(message + " (Parameter 'obj')"));
@@ -39,9 +39,9 @@ public class ExtensionsTests
 	public void ThrowIfNull_MethodWasCalledWithExceptionProvider_CustomExceptionWasThrown()
 	{
 		object? obj = null;
-		Exception exceptionProvider(string? parameterName, string message) => new ArgumentException("static message.", parameterName);
+		Exception ExceptionProvider(string? parameterName, string message) => new ArgumentException("static message.", parameterName);
 
-		Assert.That(()=> obj.ThrowIfNull(exceptionProvider: exceptionProvider), Throws.ArgumentException
+		Assert.That(()=> obj.ThrowIfNull(exceptionProvider: ExceptionProvider), Throws.ArgumentException
 			.With.Message.EqualTo("static message. (Parameter 'obj')"));
 	}
 
