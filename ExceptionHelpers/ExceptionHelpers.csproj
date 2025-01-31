@@ -15,7 +15,7 @@
 	
 	<PropertyGroup>
 		<PackageReadmeFile>README.md</PackageReadmeFile>
-		<PackageLicenseExpression>GPL-3.0</PackageLicenseExpression>
+		<PackageLicenseExpression>GPL-3.0-or-later</PackageLicenseExpression>
 	</PropertyGroup>
 	
 	<ItemGroup>
