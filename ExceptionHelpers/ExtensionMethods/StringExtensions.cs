@@ -44,7 +44,7 @@ public static class StringExtensions
     }
 
     public static string ThrowIfInvalidLength(
-        this string input,
+        this string? input,
         int maxLength = int.MaxValue,
         int minLength = 0,
         string? message = null,
@@ -54,7 +54,7 @@ public static class StringExtensions
     {
         input = input.ThrowIfNull(message, exceptionProvider, parameterName);
         
-        if (input.Length > maxLength)
+        if (input!.Length > maxLength)
         {
             if (exceptionProvider is not null)
                 throw exceptionProvider.Invoke(parameterName,
